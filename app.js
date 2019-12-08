@@ -35,7 +35,7 @@ app.get('/search',(req,res) => {
 app.get('/movies/:id',async(req,res) => {
     const id = req.params.id
     const movie = await getMovieDetails(id);
-    console.log(movie);
+    console.log(movie.data.genres);
     res.render('index', {page: "movie-details",data: movie.data})
 });
 

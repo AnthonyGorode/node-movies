@@ -47,9 +47,35 @@ h1{
 
 #block-film-details img {
     width: 300px;
-    height: 360px;
+    height: 450px;
 }
-
+#title-details {
+    font-family: 'Bungee Inline', cursive;
+    margin: 0;
+}
 #block-details {
     margin: 0 2rem 0 2rem;
+}
+#content-details {
+    font-family: 'Black Ops One', cursive;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 22px;
+    font-style: italic;
+}
+#genres-details {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    flex-direction: column;
+}
+#description-details {
+    font-family: cursive;
+    font-size: 15px;
+}
+#tag-details {
+    font-family: 'Rye', cursive;
+    font-size: 30px;
+    text-align: center;
 }

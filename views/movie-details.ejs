@@ -1,20 +1,37 @@
 <style>
     #block-film-details {
-        background: linear-gradient(rgba(250, 250, 248, 0.8), rgba(250, 250, 248, 0.8), rgba(250, 250, 248, 0.8)), url(https://image.tmdb.org/t/p/w500<%= data.backdrop_path %>) no-repeat;
+        background: linear-gradient(rgba(27.45%, 22.75%, 19.22%, 0.88), rgba(27.45%, 22.75%, 19.22%, 0.88), rgba(27.45%, 22.75%, 19.22%, 0.88)), url(https://image.tmdb.org/t/p/w500<%= data.backdrop_path %>) no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: 100% 35%;
+        height: 530px;
     }
 </style>
 <div id="block-film-details">
-    <div style="display: flex;justify-content: center;">
+    <div style="display: flex;justify-content: center;width: 70%;color: white;margin-top:2%;">
         <div id="block-image">
             <img src="https://image.tmdb.org/t/p/w500<%= data.poster_path %>" alt="Poster film">
         </div>
         <div id="block-details">
-            <h1>
+            <h1 id="title-details">
                 <%= data.title %>
             </h1>
-            <p>
+            <hr>
+            <div id="content-details">
+                <p><%= data.vote_average %>/10</p>
+                <p><%= new Date(data.release_date).getFullYear() %></p>
+                <p id="genres-details">
+                    <% data.genres.map((element) => { %>
+                        <i><%= element.name %></i>
+                    <% }) %>
+                </p>
+            </div>
+            <hr>
+            <% if(data.tagline) { %>
+                <p id="tag-details">
+                    " <%= data.tagline %> "
+                </p>
+            <% } %>
+            <p id="description-details">
                 <%= data.overview %> 
             </p>
         </div>
