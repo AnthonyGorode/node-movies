@@ -1,0 +1,26 @@
+<style>
+    #block-film-details {
+        background: linear-gradient(rgba(250, 250, 248, 0.8), rgba(250, 250, 248, 0.8), rgba(250, 250, 248, 0.8)), url(https://image.tmdb.org/t/p/w500<%= data.backdrop_path %>) no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<div id="block-film-details">
+    <div style="display: flex;justify-content: center;">
+        <div id="block-image">
+            <img src="https://image.tmdb.org/t/p/w500<%= data.poster_path %>" alt="Poster film">
+        </div>
+        <div id="block-details">
+            <h1>
+                <%= data.title %>
+            </h1>
+            <p>
+                <%= data.overview %> 
+            </p>
+        </div>
+    </div>
+</div>
+
+<a href="/movies">
+    <button>RETOUR</button>
+</a>

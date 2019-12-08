@@ -1,0 +1,55 @@
+h1{
+    font-family: fantasy;
+}
+
+#block-film {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#block-film img {
+    width: 300px;
+    height: 360px;
+}
+.block_image {
+    position: relative;
+}
+.block_transparent {
+    position: absolute;
+    width: 300px;height: 360px;
+    background: transparent;
+    transition-property: background;
+    transition-duration: 1s;
+}
+.block_transparent:hover {
+    background: repeating-radial-gradient(#f9f9f980, transparent 110px);
+    animation-duration: 0.7s;
+    animation-name: changewidth;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+} 
+@keyframes changewidth {
+    from {
+        background: repeating-radial-gradient(#f9f9f980, transparent 156px);;
+    }
+
+    to {
+        background: repeating-radial-gradient(#f9f9f980, transparent 110px);
+    }
+}
+
+#block-film-details {
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 0px 6px #0000005c;
+}
+
+#block-film-details img {
+    width: 300px;
+    height: 360px;
+}
+
+#block-details {
+    margin: 0 2rem 0 2rem;
+}

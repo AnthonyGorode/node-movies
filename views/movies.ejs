@@ -1,0 +1,9 @@
+<h1>Tous les films disponibles</h1>
+<div id="block-film">
+    <% datas.map(({poster_path,id}) => { %>
+        <a class="block_image" href="/movies/<%= id %>">
+            <div class="block_transparent"></div>
+            <img src="https://image.tmdb.org/t/p/w500<%= poster_path %>" alt="poster film">  
+        </a>
+    <% }); %> 
+</div>

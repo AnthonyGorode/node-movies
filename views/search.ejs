@@ -1,0 +1,8 @@
+<h1>Votre recherche</h1>
+<div id="block-film">
+    <% datas.map(({image},index) => { %>
+        <a href="/movies/<%= index %>">
+            <img src="../public/assets/img/<%= image %>" alt="poster film">  
+        </a>
+    <% }); %> 
+</div>
