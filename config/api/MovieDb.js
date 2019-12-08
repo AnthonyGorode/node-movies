@@ -7,12 +7,12 @@ const apiMovies = axios.create({
 const apiKey = process.env.API_KEY;
 
 async function getMovies() {
-    const url = `/discover/movie?api_key=${apiKey}&language=fr`;
+    const url = `discover/movie?api_key=${apiKey}&language=fr`;
     return await apiMovies.get(url);
 }
-
+// https://api.themoviedb.org/3/movie/522938?api_key=2fae416c150ee4b2e2c62a138bf9b3ea&language=fr
 async function getMovieDetails(id) {
-    const url = `/movie/${id}?api_key=${apiKey}&language=fr`;
+    const url = `movie/${id}?api_key=${apiKey}&language=fr`;
     return await apiMovies.get(url);
 }
 

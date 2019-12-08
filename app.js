@@ -3,6 +3,7 @@ const movies = require('./data/movies.js');
 const bodyParser = require('body-parser');
 
 const { getMovies, getMovieDetails } = require('./config/api/MovieDb');
+const getQueryGraphQL = require("./config/api/graphQl");
 
 const app = express();
 
@@ -28,7 +29,9 @@ app.post('/movies',(req,res) => {
     console.log(req.body);
 });
 
-app.get('/search',(req,res) => {
+app.get('/search',async(req,res) => {
+    const details = await getQueryGraphQL();
+    console.log(details.data);
     res.render('index', {page: "search",datas: movies})
 });
 
