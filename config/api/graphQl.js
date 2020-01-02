@@ -1,6 +1,14 @@
 const { graphql, buildSchema } = require("graphql");
 const { getMovieDetails } = require("./MovieDb");
 
+const axios = require('axios');
+require ('custom-env').env(true)
+
+const apiMovies = axios.create({
+    baseURL: "https://api.themoviedb.org/3/"
+});
+const apiKey = process.env.API_KEY;
+
 const typeDefs = buildSchema(`
   type Query {
       getFilm(id: Int): Film
@@ -26,7 +34,7 @@ const typeDefs = buildSchema(`
 const resolvers = {
   Query: {
     getFilm: async (id) => {
-      return await getMovieDetails(id);
+      return await apiMovies.get(url);
     //   return response.json();
     }
   }
