@@ -16,7 +16,19 @@ async function getMovieDetails(id) {
     return await apiMovies.get(url);
 }
 
+async function getMoviesMarvel() {
+    const url = `/movie/popular?api_key=${apiKey}&language=fr&with_companies=420`;
+    return await apiMovies.get(url);
+}
+
+async function getMoviesDC() {
+    const url = `/movie/popular?api_key=${apiKey}&language=fr&with_companies=9993`;
+    return await apiMovies.get(url);
+}
+
 module.exports = {
-    getMovies: getMovies,
-    getMovieDetails: getMovieDetails
+    getMovies,
+    getMoviesMarvel,
+    getMoviesDC,
+    getMovieDetails
 };

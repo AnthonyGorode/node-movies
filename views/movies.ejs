@@ -1,4 +1,4 @@
-<h1>Tous les films disponibles</h1>
+<h1><%= title %></h1>
 <div id="block-film">
     <% datas.map(({poster_path,id}) => { %>
         <a class="block_image" href="/movies/<%= id %>">
